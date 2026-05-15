@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "id": "captcha",
+      "title": "Ввод капчи",
+      "subtitle": "Самый простой старт без навыков",
+      "items": [
+        {"title": "RuCaptcha", "desc": "Много капч, вывод на крипту", "icon": "img/rucaptcha.png", "url": "#", "badge": "Easy", "rating": "4.2", "payment_time": "1-3 часа"},
+        {"title": "2Captcha", "desc": "Международный сервис", "icon": "img/2captcha.png", "url": "#", "badge": "Easy", "rating": "4.1", "payment_time": "до 24ч"},
+        {"title": "Kolotibablo", "desc": "Старый проверенный сервис", "icon": "img/kolotibablo.png", "url": "#", "badge": "Classic", "rating": "4.0", "payment_time": "Мгновенно"},
+        {"title": "MegaTypers", "desc": "Англоязычный набор текста", "icon": "img/megatypers.png", "url": "#", "badge": "Global", "rating": "3.8", "payment_time": "до 7 дней"}
+      ]
+    },
+    {
+      "id": "ai_tasks",
+      "title": "Разметка данных и ИИ",
+      "subtitle": "Обучай нейросети и зарабатывай",
+      "items": [
+        {"title": "Toloka", "desc": "Задания от Яндекса, AI", "icon": "img/toloka.png", "url": "#", "badge": "Popular", "rating": "4.7", "payment_time": "1-5 дней"},
+        {"title": "Remotasks", "desc": "Обучение нейросетей", "icon": "img/remotasks.png", "url": "#", "badge": "AI", "rating": "4.6", "payment_time": "Раз в неделю"},
+        {"title": "Clickworker", "desc": "UHRS задачи от Microsoft", "icon": "img/clickworker.png", "url": "#", "badge": "High Pay", "rating": "4.5", "payment_time": "до 14 дней"},
+        {"title": "Outlier", "desc": "Тренировка топовых ИИ", "icon": "img/outlier.png", "url": "#", "badge": "Premium", "rating": "4.8", "payment_time": "Раз в неделю"}
+      ]
+    },
+    {
+      "id": "buksy",
+      "title": "Микрозадачи и Соцсети",
+      "subtitle": "Лайки, подписки, серфинг",
+      "items": [
+        {"title": "Socpublic", "desc": "Все виды микрозадач", "icon": "img/socpublic.png", "url": "#", "badge": "Fast", "rating": "4.3", "payment_time": "Мгновенно"},
+        {"title": "QComment", "desc": "Биржа комментариев", "icon": "img/qcomment.png", "url": "#", "badge": "Quality", "rating": "4.6", "payment_time": "до 24ч"},
+        {"title": "VKTarget", "desc": "Задания в соцсетях", "icon": "img/vktarget.png", "url": "#", "badge": "Easy", "rating": "4.4", "payment_time": "до 2 дней"},
+        {"title": "Aviso", "desc": "Просмотры и тесты", "icon": "img/aviso.png", "url": "#", "badge": "Classic", "rating": "4.1", "payment_time": "Мгновенно"}
+      ]
+    }
+  ]
+}
