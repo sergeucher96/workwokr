@@ -8,15 +8,19 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <div id="app">
+    <!-- Главный контейнер-симулятор телефона -->
+    <div class="app-container">
         <!-- Загрузчик -->
         <div id="loader"></div>
 
-        <!-- Компактная "живая" шапка -->
+        <!-- Бесшовная "живая" шапка -->
         <header class="app-header" id="main-header">
-            <div class="quote-card" id="quote-box">
-                <div id="motivation-text"></div>
-                <span id="motivation-author"></span>
+            <div class="header-content">
+                <div class="status-line">
+                    <span class="live-indicator"></span>
+                    <div id="motivation-text"></div>
+                </div>
+                <div id="motivation-author"></div>
             </div>
         </header>
 
