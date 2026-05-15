@@ -2,7 +2,12 @@ const tg = window.Telegram.WebApp;
 let catalogData = [];
 let currentViewState = 'main'; 
 
+// 1. Расширяем на весь экран сразу
 tg.expand();
+// 2. Устанавливаем цвета хедера и бэкграунда в тон темы
+tg.setHeaderColor('secondary_bg_color');
+tg.setBackgroundColor('bg_color');
+
 tg.ready();
 
 tg.BackButton.onClick(() => {
