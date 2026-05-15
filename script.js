@@ -2,14 +2,19 @@ const tg = window.Telegram.WebApp;
 let catalogData = [];
 let currentViewState = 'main'; 
 
-// 1. Расширяем на весь экран сразу
+// 1. Настройка полноэкранного режима и блокировка свайпа вниз
 tg.expand();
-// 2. Устанавливаем цвета хедера и бэкграунда в тон темы
+if (tg.isVersionAtLeast('7.7')) {
+    tg.disableVerticalSwipes();
+}
+
+// 2. Цвета интерфейса
 tg.setHeaderColor('secondary_bg_color');
 tg.setBackgroundColor('bg_color');
 
 tg.ready();
 
+// Умная кнопка "Назад"
 tg.BackButton.onClick(() => {
     if (currentViewState === 'details' || currentViewState === 'category') {
         showMainCatalog();
@@ -29,10 +34,10 @@ async function initApp() {
         renderCatalog(catalogData);
 
     } catch (err) {
-        console.error("Ошибка загрузки:", err);
-        document.getElementById('main-content').innerHTML = '<p style="padding:20px; text-align:center; opacity:0.5;">Ошибка загрузки данных</p>';
+        console.error("Ошибка:", err);
+        document.getElementById('main-content').innerHTML = '<p style="padding:20px; text-align:center; opacity:0.5;">Ошибка данных</p>';
     } finally {
-        setTimeout(() => { if (loader) loader.style.display = 'none'; }, 800);
+        setTimeout(() => { if (loader) loader.style.display = 'none'; }, 600);
     }
 }
 
@@ -42,6 +47,7 @@ function renderQuote(quotes) {
     const q = quotes[Math.floor(Math.random() * quotes.length)];
     
     authorEl.innerText = `— ${q.author}`;
+    authorEl.style.opacity = '0';
     let i = 0;
     textEl.innerHTML = '';
     
@@ -49,13 +55,13 @@ function renderQuote(quotes) {
         if (i < q.text.length) {
             textEl.innerHTML = q.text.substring(0, i + 1) + '<span class="typing-cursor"></span>';
             i++;
-            setTimeout(type, Math.random() * 50 + 30);
+            setTimeout(type, Math.random() * 40 + 20);
         } else {
             textEl.innerHTML = q.text;
             authorEl.style.opacity = '0.6';
         }
     }
-    setTimeout(type, 500);
+    setTimeout(type, 600);
 }
 
 function renderCatalog(categories) {
@@ -72,7 +78,7 @@ function renderCatalog(categories) {
             <div class="section-header">
                 <div>
                     <h2>${cat.title}</h2>
-                    <p style="font-size:13px; color:var(--hint-color); margin:2px 0;">${cat.subtitle}</p>
+                    <p style="font-size:12px; color:var(--hint-color); margin:2px 0;">${cat.subtitle}</p>
                 </div>
                 <span class="see-all" onclick="showCategory('${cat.id}')">Все</span>
             </div>
@@ -93,7 +99,7 @@ function createCardHtml(item, catId) {
                 <span class="card-paytime">🕒 ${item.payment_time}</span>
             </div>
             <div class="card-desc">${item.desc}</div>
-            <div class="card-btn">Подробнее</div>
+            <div class="card-btn">Инфо</div>
         </div>
     `;
 }
@@ -101,13 +107,14 @@ function createCardHtml(item, catId) {
 function showCategory(catId) {
     const category = catalogData.find(c => c.id === catId);
     currentViewState = 'category';
+    tg.HapticFeedback.impactOccurred('medium');
     tg.BackButton.show();
     document.getElementById('main-header').style.display = 'none';
     const content = document.getElementById('main-content');
     const cardsHtml = category.items.map(item => createCardHtml(item, catId)).join('');
     content.innerHTML = `
         <div class="item-details-page">
-            <h1 style="margin:0 0 20px 0;">${category.title}</h1>
+            <h1 style="margin:0 0 20px 0; font-size: 24px;">${category.title}</h1>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">${cardsHtml}</div>
         </div>
     `;
@@ -116,6 +123,7 @@ function showCategory(catId) {
 
 function showItemDetails(item, catId) {
     currentViewState = 'details';
+    tg.HapticFeedback.selectionChanged();
     tg.BackButton.show();
     document.getElementById('main-header').style.display = 'none';
     const content = document.getElementById('main-content');
@@ -123,7 +131,7 @@ function showItemDetails(item, catId) {
         <div class="item-details-page">
             <div class="details-card">
                 <img src="${item.icon}" class="details-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25694.png'">
-                <h1 style="margin-bottom:15px;">${item.title}</h1>
+                <h1 style="margin-bottom:15px; font-size: 24px;">${item.title}</h1>
                 <div class="details-stats-row">
                     <div class="stat-item"><span class="stat-label">Рейтинг</span><span class="stat-value">★ ${item.rating}</span></div>
                     <div class="stat-item"><span class="stat-label">Выплаты</span><span class="stat-value">${item.payment_time}</span></div>
@@ -137,8 +145,9 @@ function showItemDetails(item, catId) {
 }
 
 function openServiceUrl(url) {
+    tg.HapticFeedback.impactOccurred('heavy');
     if (url && url !== "#") tg.openLink(url);
-    else tg.showAlert("Ссылка скоро будет!");
+    else tg.showAlert("Ссылка скоро появится!");
 }
 
 function showMainCatalog() {
