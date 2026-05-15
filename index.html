@@ -2,18 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>EarnStore</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <!-- Главный контейнер-симулятор телефона -->
     <div class="app-container">
-        <!-- Загрузчик -->
         <div id="loader"></div>
-
-        <!-- Бесшовная "живая" шапка -->
         <header class="app-header" id="main-header">
             <div class="header-content">
                 <div class="status-line">
@@ -23,11 +19,8 @@
                 <div id="motivation-author"></div>
             </div>
         </header>
-
-        <!-- Основной контент -->
         <main id="main-content"></main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
