@@ -8,32 +8,44 @@
     --accent-green: #34c759;
 }
 
-body {
-    background-color: #0f0f0f; 
-    margin: 0; padding: 0;
-    display: flex;
-    justify-content: center;
+/* Блокируем скролл всего окна, чтобы приложение не "гуляло" */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    background-color: #0f0f0f; /* Фон для ПК */
     font-family: -apple-system, system-ui, sans-serif;
-    user-select: none;
-    /* Фикс для высоты на мобильных */
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 }
 
+/* Основной контейнер приложения */
 .app-container {
     width: 100%;
+    height: 100vh;
+    height: -webkit-fill-available;
     max-width: 450px;
+    margin: 0 auto;
     background-color: var(--bg-color);
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    position: relative;
     display: flex;
     flex-direction: column;
-    /* Учет безопасной зоны сверху (челки) */
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    /* Учет безопасных зон (челки) */
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
+    overscroll-behavior: none;
 }
 
+/* Скроллим только контент */
+main {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 30px;
+}
+
+/* Лоадер поверх всего внутри контейнера */
 #loader {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 2000;
@@ -46,9 +58,10 @@ body {
 
 /* ШАПКА */
 .app-header {
-    padding: 15px 20px 15px; /* Уменьшили верхний паддинг, так как есть safe-area */
-    position: sticky; top: 0; z-index: 100;
+    padding: 15px 20px;
     background: var(--bg-color);
+    z-index: 100;
+    flex-shrink: 0;
 }
 .status-line { display: flex; align-items: flex-start; gap: 10px; }
 .live-indicator {
@@ -58,51 +71,45 @@ body {
 }
 @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.4; } }
 
-#motivation-text { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--text-color); }
-#motivation-author { font-size: 11px; color: var(--hint-color); margin-left: 16px; margin-top: 6px; text-transform: uppercase; opacity: 0; transition: opacity 1s; }
-.typing-cursor { display: inline-block; width: 2px; height: 15px; background: var(--button-color); margin-left: 3px; animation: blink 0.8s infinite; vertical-align: middle; }
+#motivation-text { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--text-color); }
+#motivation-author { font-size: 10px; color: var(--hint-color); margin-left: 16px; margin-top: 4px; text-transform: uppercase; opacity: 0; transition: opacity 1s; }
+.typing-cursor { display: inline-block; width: 2px; height: 14px; background: var(--button-color); margin-left: 2px; animation: blink 0.8s infinite; vertical-align: middle; }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* КАТАЛОГ */
 .section-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 5px; }
-.section-header h2 { font-size: 19px; margin: 0; font-weight: 800; }
-.see-all { color: var(--button-color); font-weight: 600; font-size: 14px; cursor: pointer; }
+.section-header h2 { font-size: 18px; margin: 0; font-weight: 800; }
+.see-all { color: var(--button-color); font-weight: 600; font-size: 13px; cursor: pointer; }
 .horizontal-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 10px 20px 20px; scroll-snap-type: x mandatory; }
 .horizontal-scroll::-webkit-scrollbar { display: none; }
 
 .card {
-    flex: 0 0 155px; background: var(--secondary-bg); border-radius: 24px; padding: 16px;
+    flex: 0 0 150px; background: var(--secondary-bg); border-radius: 20px; padding: 14px;
     display: flex; flex-direction: column; scroll-snap-align: start; position: relative;
 }
-.card-icon { width: 48px; height: 48px; border-radius: 14px; margin-bottom: 12px; }
-.card-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.card-stats { display: flex; justify-content: space-between; margin-bottom: 8px; }
-.card-rating { font-size: 11px; color: #ff9500; font-weight: 700; }
-.card-paytime { font-size: 10px; color: var(--hint-color); background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 5px; }
-.card-desc { font-size: 11px; color: var(--hint-color); line-height: 1.3; height: 28px; overflow: hidden; }
-.card-btn { margin-top: 12px; background: var(--button-color); color: var(--button-text); text-align: center; padding: 8px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+.card:active { transform: scale(0.97); }
+.card-icon { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 10px; }
+.card-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-stats { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.card-rating { font-size: 10px; color: #ff9500; font-weight: 700; }
+.card-paytime { font-size: 9px; color: var(--hint-color); background: rgba(0,0,0,0.05); padding: 2px 4px; border-radius: 4px; }
+.card-desc { font-size: 10px; color: var(--hint-color); line-height: 1.2; height: 24px; overflow: hidden; }
+.card-btn { margin-top: 10px; background: var(--button-color); color: var(--button-text); text-align: center; padding: 7px; border-radius: 10px; font-size: 11px; font-weight: 700; }
 
 /* ДЕТАЛЬНАЯ СТРАНИЦА */
 .item-details-page { padding: 20px; animation: slideUp 0.3s ease; }
 .details-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.details-logo { width: 100px; height: 100px; border-radius: 28px; margin-bottom: 15px; }
-.details-stats-row { display: flex; gap: 12px; margin-bottom: 20px; width: 100%; }
-.stat-item { background: var(--secondary-bg); padding: 14px; border-radius: 18px; flex: 1; }
-.stat-label { font-size: 11px; color: var(--hint-color); display: block; margin-bottom: 5px; }
-.stat-value { font-size: 16px; font-weight: 800; }
-.details-full-desc { font-size: 15px; line-height: 1.6; text-align: left; background: var(--secondary-bg); padding: 20px; border-radius: 22px; width: 100%; box-sizing: border-box; }
-.details-action-btn { margin-top: 25px; background: var(--button-color); color: var(--button-text); width: 100%; padding: 18px; border-radius: 20px; font-size: 17px; font-weight: 700; text-align: center; }
+.details-logo { width: 90px; height: 90px; border-radius: 24px; margin-bottom: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.details-stats-row { display: flex; gap: 10px; margin-bottom: 20px; width: 100%; }
+.stat-item { background: var(--secondary-bg); padding: 12px; border-radius: 16px; flex: 1; }
+.stat-label { font-size: 10px; color: var(--hint-color); display: block; margin-bottom: 4px; }
+.stat-value { font-size: 14px; font-weight: 800; }
+.details-full-desc { font-size: 14px; line-height: 1.5; text-align: left; background: var(--secondary-bg); padding: 18px; border-radius: 20px; width: 100%; box-sizing: border-box; }
+.details-action-btn { margin-top: 20px; background: var(--button-color); color: var(--button-text); width: 100%; padding: 16px; border-radius: 18px; font-size: 16px; font-weight: 700; text-align: center; }
 
 /* Адаптация для ПК */
-@media (min-width: 451px) {
-    .app-container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 30px;
-        min-height: calc(100vh - 40px);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        overflow: hidden;
-    }
+@media (max-width: 450px) {
+    .app-container { box-shadow: none; height: 100vh; }
 }
 
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
