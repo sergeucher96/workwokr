@@ -8,44 +8,26 @@
     --accent-green: #34c759;
 }
 
-/* Блокируем скролл всего окна, чтобы приложение не "гуляло" */
+* { box-sizing: border-box; }
+
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; 
-    background-color: #0f0f0f; /* Фон для ПК */
-    font-family: -apple-system, system-ui, sans-serif;
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    overflow: hidden; background-color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Основной контейнер приложения */
 .app-container {
-    width: 100%;
-    height: 100vh;
-    height: -webkit-fill-available;
-    max-width: 450px;
-    margin: 0 auto;
-    background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    /* Учет безопасных зон (челки) */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    overscroll-behavior: none;
+    width: 100%; height: 100vh; max-width: 450px; margin: 0 auto;
+    background-color: var(--bg-color); display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
 }
 
-/* Скроллим только контент */
 main {
-    flex: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 30px;
+    flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding-bottom: 40px;
 }
 
-/* Лоадер поверх всего внутри контейнера */
+/* Лоадер */
 #loader {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 2000;
@@ -56,13 +38,8 @@ main {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ШАПКА */
-.app-header {
-    padding: 15px 20px;
-    background: var(--bg-color);
-    z-index: 100;
-    flex-shrink: 0;
-}
+/* Шапка */
+.app-header { padding: 15px 20px; background: var(--bg-color); flex-shrink: 0; }
 .status-line { display: flex; align-items: flex-start; gap: 10px; }
 .live-indicator {
     width: 6px; height: 6px; background: var(--accent-green); border-radius: 50%;
@@ -71,45 +48,150 @@ main {
 }
 @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.4; } }
 
-#motivation-text { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--text-color); }
+#motivation-text { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--text-color); min-height: 42px; }
 #motivation-author { font-size: 10px; color: var(--hint-color); margin-left: 16px; margin-top: 4px; text-transform: uppercase; opacity: 0; transition: opacity 1s; }
 .typing-cursor { display: inline-block; width: 2px; height: 14px; background: var(--button-color); margin-left: 2px; animation: blink 0.8s infinite; vertical-align: middle; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* КАТАЛОГ */
-.section-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 5px; }
-.section-header h2 { font-size: 18px; margin: 0; font-weight: 800; }
-.see-all { color: var(--button-color); font-weight: 600; font-size: 13px; cursor: pointer; }
-.horizontal-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 10px 20px 20px; scroll-snap-type: x mandatory; }
+/* Секции */
+.content-section { width: 100%; margin-bottom: 5px; }
+
+.section-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    padding: 24px 20px 10px 20px; 
+}
+
+.section-header h2 { 
+    font-size: 20px; 
+    margin: 0; 
+    font-weight: 800; 
+    color: var(--text-color); 
+    line-height: 1;
+}
+
+.best-title { color: var(--button-color) !important; }
+.section-subtitle { font-size: 12px; color: var(--hint-color); margin: 4px 0 0 0; }
+.see-all { color: var(--button-color); font-weight: 600; font-size: 14px; cursor: pointer; padding: 4px 0; }
+
+/* Настройка отступов и прилипания */
+.horizontal-scroll { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 12px; 
+    padding: 0 20px 20px 20px;
+    scroll-padding-left: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
 .horizontal-scroll::-webkit-scrollbar { display: none; }
 
-.card {
-    flex: 0 0 150px; background: var(--secondary-bg); border-radius: 20px; padding: 14px;
-    display: flex; flex-direction: column; scroll-snap-align: start; position: relative;
+.horizontal-scroll::after {
+    content: '';
+    flex: 0 0 1px;
+    margin-left: -1px;
 }
-.card:active { transform: scale(0.97); }
-.card-icon { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 10px; }
-.card-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.card-stats { display: flex; justify-content: space-between; margin-bottom: 6px; }
-.card-rating { font-size: 10px; color: #ff9500; font-weight: 700; }
-.card-paytime { font-size: 9px; color: var(--hint-color); background: rgba(0,0,0,0.05); padding: 2px 4px; border-radius: 4px; }
-.card-desc { font-size: 10px; color: var(--hint-color); line-height: 1.2; height: 24px; overflow: hidden; }
-.card-btn { margin-top: 10px; background: var(--button-color); color: var(--button-text); text-align: center; padding: 7px; border-radius: 10px; font-size: 11px; font-weight: 700; }
 
-/* ДЕТАЛЬНАЯ СТРАНИЦА */
-.item-details-page { padding: 20px; animation: slideUp 0.3s ease; }
-.details-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.details-logo { width: 90px; height: 90px; border-radius: 24px; margin-bottom: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.details-stats-row { display: flex; gap: 10px; margin-bottom: 20px; width: 100%; }
-.stat-item { background: var(--secondary-bg); padding: 12px; border-radius: 16px; flex: 1; }
-.stat-label { font-size: 10px; color: var(--hint-color); display: block; margin-bottom: 4px; }
-.stat-value { font-size: 14px; font-weight: 800; }
-.details-full-desc { font-size: 14px; line-height: 1.5; text-align: left; background: var(--secondary-bg); padding: 18px; border-radius: 20px; width: 100%; box-sizing: border-box; }
-.details-action-btn { margin-top: 20px; background: var(--button-color); color: var(--button-text); width: 100%; padding: 16px; border-radius: 18px; font-size: 16px; font-weight: 700; text-align: center; }
+.card {
+    flex: 0 0 155px; 
+    background: var(--secondary-bg); 
+    border-radius: 22px; 
+    padding: 14px;
+    display: flex; 
+    flex-direction: column; 
+    scroll-snap-align: start;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
-/* Адаптация для ПК */
-@media (max-width: 450px) {
-    .app-container { box-shadow: none; height: 100vh; }
+.card:active { transform: scale(0.96); }
+.card-icon { width: 48px; height: 48px; border-radius: 14px; margin-bottom: 12px; object-fit: cover; }
+.card-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.card-stats { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    margin-bottom: 10px; 
+}
+
+.card-rating { font-size: 11px; color: #ff9500; font-weight: 700; padding-bottom: 2px; }
+
+.minpay-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.minpay-label {
+    font-size: 8px;
+    color: var(--hint-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.card-minpay { 
+    font-size: 10px; 
+    color: var(--accent-green); 
+    font-weight: 800; 
+    background: rgba(52, 199, 89, 0.1); 
+    padding: 2px 6px; 
+    border-radius: 6px; 
+}
+
+.card-desc { font-size: 11px; color: var(--hint-color); line-height: 1.3; height: 28px; overflow: hidden; margin-bottom: 10px; }
+.card-btn { background: var(--button-color); color: var(--button-text); text-align: center; padding: 8px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+
+/* Страницы */
+.item-page { padding: 20px; animation: slideUp 0.3s ease-out; }
+.category-info { margin-bottom: 25px; }
+.category-info h1 { margin: 0 0 8px 0; font-size: 26px; color: var(--text-color); }
+.category-info p { margin: 0; font-size: 15px; color: var(--hint-color); line-height: 1.5; }
+
+.grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.details-card { display: flex; flex-direction: column; align-items: center; }
+.details-logo { width: 96px; height: 96px; border-radius: 24px; margin-bottom: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.stats-grid { display: flex; gap: 12px; width: 100%; margin-bottom: 20px; }
+.stat-box { background: var(--secondary-bg); flex: 1; padding: 15px; border-radius: 18px; text-align: center; }
+.stat-box small { display: block; color: var(--hint-color); font-size: 11px; margin-bottom: 4px; }
+.stat-box span { font-size: 16px; font-weight: 800; color: var(--text-color); }
+.description-box { background: var(--secondary-bg); padding: 20px; border-radius: 22px; width: 100%; box-sizing: border-box; text-align: left; }
+.description-box b { color: var(--button-color); display: block; margin-bottom: 10px; font-size: 16px; }
+.description-box p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-color); }
+
+/* Блок кнопок в деталях */
+.details-actions {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.action-btn { 
+    flex: 2; /* Основная кнопка шире */
+    background: var(--button-color); 
+    color: var(--button-text); 
+    padding: 18px; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    font-weight: 700; 
+    text-align: center; 
+    cursor: pointer;
+}
+
+.secondary-btn {
+    flex: 1; /* Кнопка инструкции уже */
+    background: var(--secondary-bg);
+    color: var(--button-color);
+    padding: 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
 }
 
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
