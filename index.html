@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>EarnStore</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
@@ -12,9 +12,22 @@
         <!-- Индикатор загрузки -->
         <div id="loader"></div>
 
-        <!-- Шапка (только для главного экрана) -->
+        <!-- Шапка -->
         <header class="app-header" id="main-header">
+            <div class="topbar">
+                <div class="brand-lockup">
+                    <div class="brand-mark" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <div>
+                        <div class="app-eyebrow">Мини-каталог</div>
+                        <h1>EarnStore</h1>
+                    </div>
+                </div>
+                <div class="topbar-badge">Лучшее</div>
+            </div>
             <div class="header-content">
+                <div class="quote-label">Мысль дня</div>
                 <div class="status-line">
                     <span class="live-indicator"></span>
                     <div id="motivation-text"></div>
@@ -27,6 +40,6 @@
         <main id="main-content"></main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
