@@ -1,4 +1,12 @@
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram?.WebApp || {
+    expand() {},
+    setHeaderColor() {},
+    setBackgroundColor() {},
+    ready() {},
+    openLink(url) { window.open(url, '_blank'); },
+    BackButton: { show() {}, hide() {}, onClick() {} },
+    HapticFeedback: { impactOccurred() {}, selectionChanged() {} }
+};
 let catalogData = [];
 let currentViewState = 'main';
 
@@ -68,7 +76,7 @@ function renderCatalog(categories) {
     });
 
     if (bestItems.length > 0) {
-        renderSection(main, "🔥 Лучшее", "Проверенные временем сервисы", bestItems, null);
+        renderSection(main, "Рекомендовано", "Сервисы с лучшим балансом надежности и простого старта", bestItems, null);
     }
 
     categories.forEach(cat => {
@@ -87,7 +95,7 @@ function renderSection(parent, title, subtitle, items, catId) {
     section.innerHTML = `
         <div class="section-header">
             <div>
-                <h2 class="${isBest ? 'best-title' : ''}">${title}</h2>
+                <h2 class="${isBest ? 'best-title' : ''}">${isBest ? '<span class="section-mark">★</span>' : ''}${title}</h2>
                 <p class="section-subtitle">${subtitle}</p>
             </div>
             ${catId ? `<span class="see-all" onclick="showCategory('${catId}')">Все</span>` : ''}
@@ -99,18 +107,31 @@ function renderSection(parent, title, subtitle, items, catId) {
 
 function createCardHtml(item, catId) {
     const itemData = encodeURIComponent(JSON.stringify(item));
+    
+    const deviceIcons = (item.devices || []).map(d => 
+        d === 'mobile'
+            ? '<span class="device-icon">📱</span>'
+            : '<span class="device-icon">💻</span>'
+    ).join('');
+
     return `<div class="card" onclick="openDetails('${itemData}')">
-        <img src="${item.icon}" class="card-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25694.png'">
+        <div class="card-top">
+            <img src="${item.icon}" class="card-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25694.png'">
+            <span class="card-rating"><span>★</span>${item.rating}</span>
+        </div>
         <div class="card-title">${item.title}</div>
-        <div class="card-stats">
-            <span class="card-rating">★ ${item.rating}</span>
-            <div class="minpay-box">
-                <span class="minpay-label">Вывод от</span>
+        <div class="card-desc">${item.desc.substring(0, 86)}...</div>
+        <div class="card-meta">
+            <div class="meta-item">
+                <span class="meta-label">Вывод от</span>
                 <span class="card-minpay">${item.min_withdrawal}</span>
             </div>
+            <div class="meta-item meta-item-right">
+                <span class="meta-label">Устройства</span>
+                <div class="device-icons-wrap">${deviceIcons}</div>
+            </div>
         </div>
-        <div class="card-desc">${item.desc.substring(0, 45)}...</div>
-        <div class="card-btn">Подробнее</div>
+        <div class="card-btn">Открыть</div>
     </div>`;
 }
 
@@ -128,6 +149,7 @@ function showCategory(catId) {
     main.innerHTML = `
         <div class="item-page">
             <div class="category-info">
+                <div class="page-label">Раздел</div>
                 <h1>${category.title}</h1>
                 <p>${category.description || category.subtitle}</p>
             </div>
@@ -151,8 +173,12 @@ function openDetails(encodedItem) {
     main.innerHTML = `
         <div class="item-page">
             <div class="details-card">
-                <img src="${item.icon}" class="details-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25694.png'">
-                <h1 style="margin:0 0 20px 0; color:var(--text-color);">${item.title}</h1>
+                <div class="details-hero">
+                    <img src="${item.icon}" class="details-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25694.png'">
+                    <div class="page-label">Сервис</div>
+                    <h1 class="details-title">${item.title}</h1>
+                    <div class="details-devices">${(item.devices || []).map(d => d === 'mobile' ? '📱' : '💻').join(' · ')}</div>
+                </div>
                 
                 <div class="stats-grid">
                     <div class="stat-box">
@@ -171,7 +197,7 @@ function openDetails(encodedItem) {
                 </div>
 
                 <div class="details-actions">
-                    <div class="action-btn" onclick="tg.openLink('${item.url}')">Начать работу</div>
+                    <div class="action-btn" onclick="tg.openLink('${item.url}')">Перейти</div>
                     <div class="secondary-btn" onclick="tg.openLink('${item.instruction_url || '#'}')">Инструкция</div>
                 </div>
             </div>
