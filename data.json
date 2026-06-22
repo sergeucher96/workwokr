@@ -1,38 +1,84 @@
 {
   "categories": [
     {
+      "id": "passive",
+      "title": "Пассивный доход",
+      "subtitle": "Зарабатывай, пока отдыхаешь",
+      "description": "Проекты категории DePIN и AI. Вы делитесь мощностью интернета или устройства, помогая обучать нейросети, и получаете за это вознаграждение. Установите один раз и забудьте — доход идет автоматически в фоновом режиме.",
+      "items": [
+        {
+          "title": "Honeygain",
+          "desc": "Самый известный сервис для пассивного заработка. Делись интернетом и получай реальные доллары. Бонус $5 при регистрации по ссылке.",
+          "icon": "img/honeygain.ico",
+          "url": "https://join.honeygain.com/SERGE68C14",
+          "instruction_url": "https://telegra.ph/Honeygain-Kak-zarabatyvat-dengi-prosto-polzuyas-internetom-05-20",
+          "rating": "5.0",
+          "min_withdrawal": "$0.30",
+          "is_best": true,
+          "devices": ["mobile", "pc"]
+        },
+        {
+          "title": "Grass",
+          "desc": "Главный проект года в сфере AI. Продавай неиспользуемую пропускную способность для обучения нейросетей. Минимум нагрузки на ПК.",
+          "icon": "img/grass.webp",
+          "url": "https://app.grass.io/register?referralCode=gRfDi7T1E3k92zK",
+          "instruction_url": "https://telegra.ph/Grass-Gajd-po-ustanovke-01-01",
+          "rating": "4.9",
+          "min_withdrawal": "Points",
+          "is_best": true,
+          "devices": ["mobile", "pc"]
+        },
+        {
+          "title": "Dawn",
+          "desc": "Проект от компании Andrena на базе Solana. Установи расширение и начни накапливать баллы за поддержку децентрализованной сети.",
+          "icon": "https://cdn-icons-png.flaticon.com/512/2933/2933116.png",
+          "url": "https://www.dawnnetwork.com/",
+          "instruction_url": "https://telegra.ph/Dawn-Network-Instrukciya-01-01",
+          "rating": "4.7",
+          "min_withdrawal": "Points",
+          "is_best": false,
+          "devices": ["pc"]
+        },
+        {
+          "title": "UpRock",
+          "desc": "Лучший мобильный вариант. Автоматический майнинг токенов проекта на вашем смартфоне без потери скорости интернета.",
+          "icon": "https://cdn-icons-png.flaticon.com/512/5971/5971593.png",
+          "url": "https://link.uprock.com/i/9742d86a",
+          "instruction_url": "https://telegra.ph/UpRock-Majning-v-telefone-01-01",
+          "rating": "4.6",
+          "min_withdrawal": "Tokens",
+          "is_best": false,
+          "devices": ["mobile"]
+        }
+      ]
+    },
+    {
       "id": "captcha",
       "title": "Ввод капчи",
       "subtitle": "Самый простой старт без навыков",
-      "description": "Разгадывание капчи — это классический способ получить первые деньги в интернете. Вам нужно просто вводить текст или выбирать картинки. Это не требует обучения, начать можно сразу после регистрации. Идеально для оплаты мобильной связи или мелких покупок.",
+      "description": "Разгадывание капчи — это классический способ получить первые деньги в интернете. Не требует обучения, начать можно сразу. Идеально для мелких трат.",
       "items": [
         {
           "title": "RuCaptcha",
-          "desc": "Лучший сервис для новичков в СНГ. Огромное количество заданий, поддержка Telegram-бота и мобильного приложения. Стабильные выплаты уже более 10 лет.",
+          "desc": "Лучший сервис для новичков в СНГ. Огромное количество заданий, поддержка Telegram-бота и мобильного приложения.",
           "icon": "https://cdn-icons-png.flaticon.com/512/5602/5602732.png",
           "url": "https://rucaptcha.com",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-RuCaptcha-01-01",
+          "instruction_url": "https://2captcha.com/auth/register/?from=10770441",
           "rating": "4.8",
-          "min_withdrawal": "15 ₽",
-          "is_best": true
+          "min_withdrawal": "50 ₽",
+          "is_best": true,
+          "devices": ["mobile", "pc"]
         },
         {
           "title": "2Captcha",
-          "desc": "Международная площадка. Те же задания, что и на RuCaptcha, но оплата в долларах. Удобно, если вы используете зарубежные кошельки.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/1067/1067555.png",
-          "url": "https://2captcha.com",
+          "desc": "Международная площадка. Те же задания, что и на RuCaptcha, но оплата в долларах. Удобно для работы с зарубежными кошельками.",
+          "icon": "img/2captcha.png",
+          "url": "https://2captcha.com/auth/register/?from=10770441",
           "instruction_url": "https://telegra.ph/Instrukciya-po-2Captcha-01-01",
           "rating": "4.5",
-          "min_withdrawal": "$0.5"
-        },
-        {
-          "title": "Kolotibablo",
-          "desc": "Старейший сервис с системой накопительных бонусов. Чем больше работаете, тем выше ваша ставка за каждую капчу.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/3612/3612641.png",
-          "url": "https://kolotibablo.com",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Kolotibablo-01-01",
-          "rating": "4.2",
-          "min_withdrawal": "$1.0"
+          "min_withdrawal": "$0.5",
+          "is_best": false,
+          "devices": ["mobile", "pc"]
         }
       ]
     },
@@ -40,61 +86,40 @@
       "id": "tasks",
       "title": "Микрозадачи и Соцсети",
       "subtitle": "Лайки, отзывы и подписки",
-      "description": "Здесь платят за простые действия: подписаться на канал, поставить лайк, оставить комментарий под постом или зарегистрироваться на сайте. Это оплачивается в 5-10 раз выше, чем капча.",
+      "description": "Здесь платят за простые действия в соцсетях: подписаться на канал, оставить комментарий или поставить лайк. Оплата выше, чем за капчу.",
       "items": [
         {
           "title": "UNU",
-          "desc": "Современная биржа с очень высокой оплатой за простые задания в Telegram, VK и YouTube. Задания проверяются быстро.",
+          "desc": "Современная биржа с высокой оплатой за простые задания в Telegram, VK и YouTube. Быстрая проверка отчетов.",
           "icon": "https://cdn-icons-png.flaticon.com/512/3141/3141158.png",
-          "url": "https://unu.im",
+          "url": "https://unu.im/re/4183960/work",
           "instruction_url": "https://telegra.ph/Instrukciya-po-UNU-01-01",
           "rating": "4.9",
-          "min_withdrawal": "50 ₽"
-        },
-        {
-          "title": "QComment",
-          "desc": "Биржа комментариев номер один. После прохождения простого экзамена на грамотность открываются дорогие заказы на отзывы.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2190/2190552.png",
-          "url": "https://qcomment.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-QComment-01-01",
-          "rating": "4.8",
-          "min_withdrawal": "100 ₽"
+          "min_withdrawal": "50 ₽",
+          "is_best": false,
+          "devices": ["mobile", "pc"]
         },
         {
           "title": "Socpublic",
-          "desc": "Огромный проект с тысячами заданий. Есть автоматический серфинг сайтов и быстрые тесты. Выплаты мгновенные.",
+          "desc": "Огромный проект с тысячами заданий. Есть автосерфинг и тесты. Выплаты мгновенные на любые кошельки.",
           "icon": "https://cdn-icons-png.flaticon.com/512/1773/1773345.png",
-          "url": "https://socpublic.com",
+          "url": "https://socpublic.com/?i=9761444&slide=1",
           "instruction_url": "https://telegra.ph/Instrukciya-po-Socpublic-01-01",
           "rating": "4.7",
-          "min_withdrawal": "11 ₽"
-        },
-        {
-          "title": "VKTarget",
-          "desc": "Заработок только на соцсетях. Привязываете свои аккаунты и выполняете задания в один клик. Минимум усилий.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/3670/3670051.png",
-          "url": "https://vktarget.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-VKTarget-01-01",
-          "rating": "4.4",
-          "min_withdrawal": "15 ₽"
-        },
-        {
-          "title": "Aviso",
-          "desc": "Площадка для тех, кто любит быстрые задания: просмотр видео, клики по сайтам и чтение писем. Вывод на любые кошельки.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/1162/1162456.png",
-          "url": "https://aviso.bz",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Aviso-01-01",
-          "rating": "4.3",
-          "min_withdrawal": "2 ₽"
+          "min_withdrawal": "11 ₽",
+          "is_best": false,
+          "devices": ["pc", "mobile"]
         },
         {
           "title": "Seosprint",
-          "desc": "Легендарный сервис. Чистый интерфейс и строгая модерация заданий. Платят в долларах, выводят быстро.",
+          "desc": "Легендарный букс с чистым интерфейсом. Оплата в долларах, строгая модерация и очень надежные выплаты.",
           "icon": "https://cdn-icons-png.flaticon.com/512/2103/2103463.png",
-          "url": "https://seosprint.net",
+          "url": "https://seosprint.net/?ref=17103938",
           "instruction_url": "https://telegra.ph/Instrukciya-po-Seosprint-01-01",
           "rating": "4.5",
-          "min_withdrawal": "$0.1"
+          "min_withdrawal": "$0.1",
+          "is_best": false,
+          "devices": ["pc"]
         }
       ]
     },
@@ -102,25 +127,18 @@
       "id": "ai_data",
       "title": "Разметка для ИИ",
       "subtitle": "Обучай нейросети и зарабатывай",
-      "description": "Помогите ИИ понимать мир! Задания включают: выделение объектов на фото, оценку качества поиска или запись голосовых сообщений. Оплата здесь гораздо серьезнее.",
+      "description": "Помогите искусственному интеллекту понимать мир. Выделяйте объекты на фото или записывайте голос. Высокая оплата.",
       "items": [
         {
           "title": "Toloka",
-          "desc": "Проект Яндекса. Задания можно выполнять прямо в мобильном приложении. Есть полевые задачи (проверить адрес организации).",
+          "desc": "Проект для заработка на простых задачах от Яндекса. Есть полевые задания в вашем городе. Вывод в долларах.",
           "icon": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
           "url": "https://toloka.ai",
           "instruction_url": "https://telegra.ph/Instrukciya-po-Toloka-01-01",
           "rating": "4.7",
-          "min_withdrawal": "$1.0"
-        },
-        {
-          "title": "Remotasks",
-          "desc": "Американская платформа. Нужно обучать беспилотные автомобили и чат-ботов. Требуется базовый английский.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/8618/8618881.png",
-          "url": "https://www.remotasks.com",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Remotasks-01-01",
-          "rating": "4.2",
-          "min_withdrawal": "$5.0"
+          "min_withdrawal": "$1.0",
+          "is_best": false,
+          "devices": ["mobile", "pc"]
         }
       ]
     },
@@ -128,61 +146,16 @@
       "id": "surveys",
       "title": "Опросы и Мнения",
       "subtitle": "Твое мнение имеет цену",
-      "description": "Бренды платят за заполнение анкет. Один опрос занимает 10-15 минут, но за него можно получить до 100 рублей. Рекомендуем заполнять профиль максимально подробно.",
+      "description": "Бренды платят за заполнение анкет. Один опрос занимает 10-15 минут, но приносит достойное вознаграждение.",
       "items": [
-        {
-          "title": "Анкетка",
-          "desc": "Самый крупный опросник в России. Платят за каждую анкету, даже если вы не подошли по критериям (утешительный бонус).",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2666/2666505.png",
-          "url": "https://www.anketka.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Anketka-01-01",
-          "rating": "4.8",
-          "min_withdrawal": "1000 ₽"
-        },
-        {
-          "title": "YouThink",
-          "desc": "Собирает опросы от мировых маркетинговых агентств. Много доступных анкет каждый день. Вывод на карту или кошельки.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/1633/1633630.png",
-          "url": "https://youthink.io",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-YouThink-01-01",
-          "rating": "4.6",
-          "min_withdrawal": "300 ₽"
-        },
-        {
-          "title": "Expert Opinion",
-          "desc": "Надежный сервис опросов. Начисляют баллы, которые легко переводятся в рубли и выводятся на телефон или карту.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2103/2103507.png",
-          "url": "https://expertnoemnenie.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Expert-Opinion-01-01",
-          "rating": "4.4",
-          "min_withdrawal": "500 ₽"
-        }
       ]
     },
     {
       "id": "mobile",
       "title": "Мобильные приложения",
-      "subtitle": "Установка игр и приложений",
-      "description": "Заработок с телефона. Платят за установку бесплатных игр и приложений из App Store или Google Play. Часто нужно просто открыть приложение на 30 секунд.",
+      "subtitle": "Установка игр и софта",
+      "description": "Заработок с телефона. Платят за установку бесплатных приложений. Часто нужно просто открыть приложение на 30 секунд.",
       "items": [
-        {
-          "title": "AdvertApp",
-          "desc": "Лидер рынка. Новые заказы появляются каждый час. Деньги можно вывести сразу после выполнения задания.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2586/2586236.png",
-          "url": "https://advertapp.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-AdvertApp-01-01",
-          "rating": "4.7",
-          "min_withdrawal": "1 ₽"
-        },
-        {
-          "title": "AppBonus",
-          "desc": "Простое приложение с ежедневными бонусами. Чем дольше пользуетесь, тем больше процент доплаты за задания.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/893/893257.png",
-          "url": "https://appbonus.ru",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-AppBonus-01-01",
-          "rating": "4.6",
-          "min_withdrawal": "5 ₽"
-        }
       ]
     }
   ]
