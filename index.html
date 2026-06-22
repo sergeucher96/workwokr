@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>EarnStore</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <!-- Индикатор загрузки -->
         <div id="loader"></div>
 
-        <!-- Шапка -->
         <header class="app-header" id="main-header">
             <div class="topbar">
                 <div class="brand-lockup">
@@ -26,20 +24,19 @@
                 </div>
                 <div class="topbar-badge">Лучшее</div>
             </div>
-            <div class="header-content">
-                <div class="quote-label">Мысль дня</div>
-                <div class="status-line">
-                    <span class="live-indicator"></span>
+            
+            <!-- Урезанный блок цитаты -->
+            <div class="header-content compact-quote">
+                <div class="quote-row">
+                    <div class="quote-label-mini">Мысль дня:</div>
                     <div id="motivation-text"></div>
                 </div>
                 <div id="motivation-author"></div>
             </div>
         </header>
 
-        <!-- Контентная область -->
         <main id="main-content"></main>
     </div>
-
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>
