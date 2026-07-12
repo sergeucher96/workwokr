@@ -88,14 +88,21 @@ function renderCatalog(categories) {
 
 function renderSection(parent, title, subtitle, items, catId) {
     const section = document.createElement('section');
-    section.className = 'content-section';
-    const isBest = !catId;
+    
+    // Проверяем: если catId равен null, значит это секция "Рекомендовано"
+    const isBestSection = !catId; 
+    
+    // Если это секция рекомендованных, добавляем спец. класс всей секции
+    section.className = isBestSection ? 'content-section recommended-section' : 'content-section';
+    
     const cardsHtml = items.map(item => createCardHtml(item, catId || item.catId)).join('');
     
     section.innerHTML = `
         <div class="section-header">
             <div>
-                <h2 class="${isBest ? 'best-title' : ''}">${isBest ? '<span class="section-mark">★</span>' : ''}${title}</h2>
+                <h2 class="${isBestSection ? 'best-title' : ''}">
+                    ${isBestSection ? '<span class="section-mark">★</span>' : ''}${title}
+                </h2>
                 <p class="section-subtitle">${subtitle}</p>
             </div>
             ${catId ? `<span class="see-all" onclick="showCategory('${catId}')">Все</span>` : ''}
@@ -107,7 +114,8 @@ function renderSection(parent, title, subtitle, items, catId) {
 
 function createCardHtml(item, catId) {
     const itemData = encodeURIComponent(JSON.stringify(item));
-    
+
+
     const deviceIcons = (item.devices || []).map(d => 
         d === 'mobile'
             ? '<span class="device-icon">📱</span>'
