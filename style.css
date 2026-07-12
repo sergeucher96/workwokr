@@ -726,3 +726,37 @@ main {
         flex-direction: column;
     }
 }
+/* Стили для рекомендованных карточек */
+.card.recommended {
+    border: 2px solid #fbbc04 !important; /* Золотой цвет из твоих переменных */
+    box-shadow: 0 0 12px rgba(251, 188, 4, 0.25); /* Мягкое золотое свечение */
+    position: relative;
+    background: linear-gradient(var(--surface-color), var(--surface-color)) padding-box,
+                linear-gradient(135deg, #fbbc04, #ffd700) border-box;
+}
+
+.recommended-section .card {
+    border: 2px solid #fbbc04 !important;
+    box-shadow: 0 4px 12px rgba(251, 188, 4, 0.15) !important;
+    background: var(--surface-color); /* Сохраняем фон */
+}
+
+/* Опционально: сделаем кнопку внутри этих карточек тоже золотистой, чтобы всё сочеталось */
+.recommended-section .card .card-btn {
+    background: #fef7e0;
+    border-color: #fde293;
+    color: #5f4300;
+}
+
+/* Темная тема для золотых рамок внутри секции */
+@media (prefers-color-scheme: dark) {
+    .recommended-section .card {
+        border-color: #fdd663 !important;
+        box-shadow: 0 4px 15px rgba(253, 214, 99, 0.1) !important;
+    }
+    .recommended-section .card .card-btn {
+        background: rgba(251, 188, 4, 0.15);
+        border-color: rgba(251, 188, 4, 0.25);
+        color: #fdd663;
+    }
+}
