@@ -22,33 +22,22 @@
           "desc": "Главный проект года в сфере AI. Продавай неиспользуемую пропускную способность для обучения нейросетей. Минимум нагрузки на ПК.",
           "icon": "img/grass.webp",
           "url": "https://app.grass.io/register?referralCode=gRfDi7T1E3k92zK",
-          "instruction_url": "https://telegra.ph/Grass-Gajd-po-ustanovke-01-01",
+          "instruction_url": "https://telegra.ph/Grass-Kak-zarabatyvat-na-svoyom-internete-bez-vlozhenij-Polnyj-gajd-07-11",
           "rating": "4.9",
           "min_withdrawal": "Points",
           "is_best": true,
           "devices": ["mobile", "pc"]
         },
         {
-          "title": "Dawn",
-          "desc": "Проект от компании Andrena на базе Solana. Установи расширение и начни накапливать баллы за поддержку децентрализованной сети.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2933/2933116.png",
-          "url": "https://www.dawnnetwork.com/",
-          "instruction_url": "https://telegra.ph/Dawn-Network-Instrukciya-01-01",
-          "rating": "4.7",
-          "min_withdrawal": "Points",
-          "is_best": false,
-          "devices": ["pc"]
-        },
-        {
           "title": "UpRock",
           "desc": "Лучший мобильный вариант. Автоматический майнинг токенов проекта на вашем смартфоне без потери скорости интернета.",
           "icon": "https://cdn-icons-png.flaticon.com/512/5971/5971593.png",
           "url": "https://link.uprock.com/i/9742d86a",
-          "instruction_url": "https://telegra.ph/UpRock-Majning-v-telefone-01-01",
+          "instruction_url": "https://telegra.ph/UpRock-Passivnyj-zarabotok-tokenov-UPT-na-smartfone-DePIN-proekt-na-Solana-07-11",
           "rating": "4.6",
-          "min_withdrawal": "Tokens",
+          "min_withdrawal": "50₽",
           "is_best": false,
-          "devices": ["mobile"]
+          "devices": ["mobile", "pc"]
         }
       ]
     },
@@ -62,8 +51,8 @@
           "title": "RuCaptcha",
           "desc": "Лучший сервис для новичков в СНГ. Огромное количество заданий, поддержка Telegram-бота и мобильного приложения.",
           "icon": "https://cdn-icons-png.flaticon.com/512/5602/5602732.png",
-          "url": "https://rucaptcha.com",
-          "instruction_url": "https://2captcha.com/auth/register/?from=10770441",
+          "url": "https://2captcha.com/auth/register/?from=10770441",
+          "instruction_url": "https://telegra.ph/RuCaptcha--2Captcha-Zarabotok-na-vvode-kapchi-Samyj-prostoj-start-bez-vlozhenij-07-11",
           "rating": "4.8",
           "min_withdrawal": "50 ₽",
           "is_best": true,
@@ -74,7 +63,7 @@
           "desc": "Международная площадка. Те же задания, что и на RuCaptcha, но оплата в долларах. Удобно для работы с зарубежными кошельками.",
           "icon": "img/2captcha.png",
           "url": "https://2captcha.com/auth/register/?from=10770441",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-2Captcha-01-01",
+          "instruction_url": "https://telegra.ph/RuCaptcha--2Captcha-Zarabotok-na-vvode-kapchi-Samyj-prostoj-start-bez-vlozhenij-07-11",
           "rating": "4.5",
           "min_withdrawal": "$0.5",
           "is_best": false,
@@ -93,7 +82,7 @@
           "desc": "Современная биржа с высокой оплатой за простые задания в Telegram, VK и YouTube. Быстрая проверка отчетов.",
           "icon": "img/umulogo.png",
           "url": "https://unu.im/re/4183960/work",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-UNU-01-01",
+          "instruction_url": "https://telegra.ph/UNU-Birzha-mikrozadach--kak-zarabatyvat-na-prostyh-zadaniyah-v-socsetyah-07-11",
           "rating": "4.9",
           "min_withdrawal": "50 ₽",
           "is_best": false,
@@ -104,7 +93,7 @@
           "desc": "Огромный проект с тысячами заданий. Есть автосерфинг и тесты. Выплаты мгновенные на любые кошельки.",
           "icon": "https://cdn-icons-png.flaticon.com/512/1773/1773345.png",
           "url": "https://socpublic.com/?i=9761444&slide=1",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Socpublic-01-01",
+          "instruction_url": "https://telegra.ph/Socpublic-Legendarnaya-ploshchadka-dlya-zarabotka-bez-vlozhenij-Polnyj-obzor-07-11",
           "rating": "4.7",
           "min_withdrawal": "11 ₽",
           "is_best": false,
@@ -115,11 +104,11 @@
           "desc": "Легендарный букс с чистым интерфейсом. Оплата в долларах, строгая модерация и очень надежные выплаты.",
           "icon": "https://cdn-icons-png.flaticon.com/512/2103/2103463.png",
           "url": "https://seosprint.net/?ref=17103938",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Seosprint-01-01",
+          "instruction_url": "https://telegra.ph/SEOsprint-Stabilnyj-zarabotok-na-mikrozadachah-s-2010-goda-07-11",
           "rating": "4.5",
           "min_withdrawal": "$0.1",
           "is_best": false,
-          "devices": ["pc"]
+          "devices": ["pc", "mobile"]
         }
       ]
     },
@@ -142,14 +131,47 @@
         }
       ]
     },
+   {
+  "id": "surveys",
+  "title": "Опросы и Мнения",
+  "subtitle": "Деньги за ваши ответы",
+  "description": "Проходите платные опросы от крупных брендов. За одну заполненную анкету можно получить от 20 до 150 рублей. Идеально для неспешного заработка.",
+  "items": [
     {
-      "id": "surveys",
-      "title": "Опросы и Мнения",
-      "subtitle": "Твое мнение имеет цену",
-      "description": "Бренды платят за заполнение анкет. Один опрос занимает 10-15 минут, но приносит достойное вознаграждение.",
-      "items": [
-      ]
+      "title": "Анкетка.ру",
+      "desc": "Самый старый и надежный сервис опросов в СНГ. Платят даже за короткие анкеты, если вы не подошли под критерии основного опроса.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2641/2641457.png",
+      "url": "https://www.anketka.ru/referral/16759874",
+      "instruction_url": "https://telegra.ph/Anketkaru-Kak-zarabatyvat-na-svoyom-mnenii-Instrukciya-07-12",
+      "rating": "4.9",
+      "min_withdrawal": "1000 ₽",
+      "is_best": true,
+      "devices": ["mobile", "pc"]
     },
+    {
+      "title": "Яндекс Задания",
+      "desc": "Новый проект от Яндекса. Здесь много коротких опросов и заданий на логику. Самый быстрый вывод денег среди всех опросников.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968923.png",
+      "url": "https://tasks.yandex.ru/",
+      "instruction_url": "https://telegra.ph/YAndeks-Zadaniya-Kak-zarabatyvat-na-proverkakh-dannykh-i-oprosakh-07-11",
+      "rating": "4.8",
+      "min_withdrawal": "от 1 ₽",
+      "is_best": false,
+      "devices": ["mobile", "pc"]
+    },
+    {
+      "title": "Экспертное Мнение",
+      "desc": "Популярный опросник с хорошей оплатой за одну анкету. Часто присылают тематические исследования о товарах и услугах.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1484/1484815.png",
+      "url": "https://panel.expertnoemnenie.ru/?ref=fe1ygwdkywhc68q7hpm1qraee0",
+      "instruction_url": "https://telegra.ph/EHkspertnoe-Mnenie-Kak-poluchat-dengi-za-oprosy-i-bonus-80-rublej-za-registraciyu-07-12",
+      "rating": "4.6",
+      "min_withdrawal": "500 ₽",
+      "is_best": false,
+      "devices": ["mobile", "pc"]
+    }
+  ]
+},
     {
       "id": "mobile",
       "title": "Мобильные приложения",
