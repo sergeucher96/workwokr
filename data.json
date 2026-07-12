@@ -93,7 +93,7 @@
           "desc": "Огромный проект с тысячами заданий. Есть автосерфинг и тесты. Выплаты мгновенные на любые кошельки.",
           "icon": "https://cdn-icons-png.flaticon.com/512/1773/1773345.png",
           "url": "https://socpublic.com/?i=9761444&slide=1",
-          "instruction_url": "https://telegra.ph/Socpublic-Legendarnaya-ploshchadka-dlya-zarabotka-bez-vlozhenij-Polnyj-obzor-07-11",
+          "instruction_url": "https://telegra.ph/Socpublic-Legendarnaya-ploshchadka-dlya-zarabotka-bez-vlozhenij-Polnyj-обзор-07-11",
           "rating": "4.7",
           "min_withdrawal": "11 ₽",
           "is_best": false,
@@ -113,71 +113,44 @@
       ]
     },
     {
-      "id": "ai_data",
-      "title": "Разметка для ИИ",
-      "subtitle": "Обучай нейросети и зарабатывай",
-      "description": "Помогите искусственному интеллекту понимать мир. Выделяйте объекты на фото или записывайте голос. Высокая оплата.",
+      "id": "surveys",
+      "title": "Опросы и Мнения",
+      "subtitle": "Деньги за ваши ответы",
+      "description": "Проходите платные опросы от крупных брендов. За одну заполненную анкету можно получить от 20 до 150 рублей. Идеально для неспешного заработка.",
       "items": [
         {
-          "title": "Toloka",
-          "desc": "Проект для заработка на простых задачах от Яндекса. Есть полевые задания в вашем городе. Вывод в долларах.",
-          "icon": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
-          "url": "https://toloka.ai",
-          "instruction_url": "https://telegra.ph/Instrukciya-po-Toloka-01-01",
-          "rating": "4.7",
-          "min_withdrawal": "$1.0",
+          "title": "Анкетка.ру",
+          "desc": "Самый старый и надежный сервис опросов в СНГ. Платят даже за короткие анкеты, если вы не подошли под критерии основного опроса.",
+          "icon": "https://cdn-icons-png.flaticon.com/512/2641/2641457.png",
+          "url": "https://www.anketka.ru/referral/16759874",
+          "instruction_url": "https://telegra.ph/Anketkaru-Kak-zarabatyvat-na-svoyom-mnenii-Instrukciya-07-12",
+          "rating": "4.9",
+          "min_withdrawal": "1000 ₽",
+          "is_best": true,
+          "devices": ["mobile", "pc"]
+        },
+        {
+          "title": "Яндекс Задания",
+          "desc": "Новый проект от Яндекса. Здесь много коротких опросов и заданий на логику. Самый быстрый вывод денег среди всех опросников.",
+          "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968923.png",
+          "url": "https://tasks.yandex.ru/",
+          "instruction_url": "https://telegra.ph/YAndeks-Zadaniya-Kak-zarabatyvat-na-proverkakh-dannykh-i-oprosakh-07-11",
+          "rating": "4.8",
+          "min_withdrawal": "от 1 ₽",
+          "is_best": false,
+          "devices": ["mobile", "pc"]
+        },
+        {
+          "title": "Экспертное Мнение",
+          "desc": "Популярный опросник с хорошей оплатой за одну анкету. Часто присылают тематические исследования о товарах и услугах.",
+          "icon": "https://cdn-icons-png.flaticon.com/512/1484/1484815.png",
+          "url": "https://panel.expertnoemnenie.ru/?ref=fe1ygwdkywhc68q7hpm1qraee0",
+          "instruction_url": "https://telegra.ph/EHkspertnoe-Mnenie-Kak-poluchat-dengi-za-oprosy-i-bonus-80-rublej-za-registraciyu-07-12",
+          "rating": "4.6",
+          "min_withdrawal": "500 ₽",
           "is_best": false,
           "devices": ["mobile", "pc"]
         }
-      ]
-    },
-   {
-  "id": "surveys",
-  "title": "Опросы и Мнения",
-  "subtitle": "Деньги за ваши ответы",
-  "description": "Проходите платные опросы от крупных брендов. За одну заполненную анкету можно получить от 20 до 150 рублей. Идеально для неспешного заработка.",
-  "items": [
-    {
-      "title": "Анкетка.ру",
-      "desc": "Самый старый и надежный сервис опросов в СНГ. Платят даже за короткие анкеты, если вы не подошли под критерии основного опроса.",
-      "icon": "https://cdn-icons-png.flaticon.com/512/2641/2641457.png",
-      "url": "https://www.anketka.ru/referral/16759874",
-      "instruction_url": "https://telegra.ph/Anketkaru-Kak-zarabatyvat-na-svoyom-mnenii-Instrukciya-07-12",
-      "rating": "4.9",
-      "min_withdrawal": "1000 ₽",
-      "is_best": true,
-      "devices": ["mobile", "pc"]
-    },
-    {
-      "title": "Яндекс Задания",
-      "desc": "Новый проект от Яндекса. Здесь много коротких опросов и заданий на логику. Самый быстрый вывод денег среди всех опросников.",
-      "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968923.png",
-      "url": "https://tasks.yandex.ru/",
-      "instruction_url": "https://telegra.ph/YAndeks-Zadaniya-Kak-zarabatyvat-na-proverkakh-dannykh-i-oprosakh-07-11",
-      "rating": "4.8",
-      "min_withdrawal": "от 1 ₽",
-      "is_best": false,
-      "devices": ["mobile", "pc"]
-    },
-    {
-      "title": "Экспертное Мнение",
-      "desc": "Популярный опросник с хорошей оплатой за одну анкету. Часто присылают тематические исследования о товарах и услугах.",
-      "icon": "https://cdn-icons-png.flaticon.com/512/1484/1484815.png",
-      "url": "https://panel.expertnoemnenie.ru/?ref=fe1ygwdkywhc68q7hpm1qraee0",
-      "instruction_url": "https://telegra.ph/EHkspertnoe-Mnenie-Kak-poluchat-dengi-za-oprosy-i-bonus-80-rublej-za-registraciyu-07-12",
-      "rating": "4.6",
-      "min_withdrawal": "500 ₽",
-      "is_best": false,
-      "devices": ["mobile", "pc"]
-    }
-  ]
-},
-    {
-      "id": "mobile",
-      "title": "Мобильные приложения",
-      "subtitle": "Установка игр и софта",
-      "description": "Заработок с телефона. Платят за установку бесплатных приложений. Часто нужно просто открыть приложение на 30 секунд.",
-      "items": [
       ]
     }
   ]
